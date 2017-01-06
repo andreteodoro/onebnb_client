@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Property } from '../shared/property';
+import { PropertiesService } from '../shared/properties.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  private properties: Property[] = [];
 
-  ngOnInit() {
-  }
+  constructor(private PropertiesService: PropertiesService) { }
+
+  ngOnInit(
+    this.PropertiesService.getProperties()
+  .subscribe(data < this.properties = data);
+  ) {
+}
 
 }
