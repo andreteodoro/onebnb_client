@@ -11,6 +11,7 @@ export class AppComponent {
      this._tokenService.init({
        apiPath: "http://localhost:3000/api/v1",
        signInRedirect: '/',
+       resetPasswordCallback: "http://localhost:4200/user/updatePassword",
        globalOptions: {
          headers: {
            'Content-Type':     'application/json',
