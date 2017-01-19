@@ -26,7 +26,8 @@
       <ul class="nav navbar-nav" dropdown (onToggle)="toggled($event)">
         <li><a href="/" dropdownToggle>ENTRAR</a></li>
         <ul class="dropdown-menu login-box" dropdownMenu aria-labelledby="simple-dropdown">
-          <app-login></app-login>
+          <app-login *ngIf="_propertiesService.resetPassword == false"></app-login>
+          <app-reset-password *ngIf="_propertiesService.resetPassword == true"></app-reset-password>
         </ul>
       </ul>
       <ul class="nav navbar-nav" dropdown (onToggle)="toggled($event)">

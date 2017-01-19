@@ -16,7 +16,7 @@
                     required
                     [(ngModel)]="_signInData.password"
                     name="password">
-                    <span class="pull-right"><a href="/user/resetPassword">Esqueci Minha Senha</a></span>
+                    <span class="pull-right"><a (click)="resetPassword($event)" href="">Esqueci Minha Senha</a></span>
             </div>
             <button
                 type="submit"

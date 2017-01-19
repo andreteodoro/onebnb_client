@@ -10,7 +10,8 @@ import { Observable } from 'rxjs/Rx';
 export class PropertiesService {
 
   private url: string = "http://localhost:3000/api/v1/properties.json";
-
+  public resetPassword: boolean = false;
+  
   constructor(private http: Http) { }
 
   getProperties() {

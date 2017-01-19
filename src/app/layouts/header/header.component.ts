@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
+import { PropertiesService } from '../../shared/properties.service';
 
 
 @Component({
@@ -9,12 +10,13 @@ import { Angular2TokenService } from 'angular2-token';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _tokenService: Angular2TokenService) { }
+  constructor(private _tokenService: Angular2TokenService,
+              private _propertiesService: PropertiesService) { }
 
   ngOnInit() {
   }
 
-  public toggled(open: boolean): void { }
+  public toggled(open: boolean): void {}
 
   public collapsed(event: any): void { }
 
