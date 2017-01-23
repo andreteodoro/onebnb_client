@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, URLSearchParams } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
@@ -14,6 +14,14 @@ export class PropertiesService {
   public resetPassword: boolean = false;
 
   constructor(private http: Http) { }
+
+  searchProperties(params){
+    let parameters = new URLSearchParams();
+    for(var f in params) { parameters.set(f, params[f]) }
+
+    return this.http.get(environment.api_base_url + 'search.json', {search: parameters})
+      .map(res => res.json());
+  }
 
   getProperties(){
     return this.http.get(environment.api_base_url + 'properties.json')
