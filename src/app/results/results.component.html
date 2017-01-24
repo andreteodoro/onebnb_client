@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div *ngFor="let p of properties">
-        <app-property-box name="{{p.property.name}}" price="{{ p.property.price }}" photo="{{ p.property.photos[0] }}"></app-property-box>
+        <app-property-box name="{{ p.property.name }}" price="{{ p.property.price }}" photo="{{ p.property.photos[0] }}"></app-property-box>
       </div>
     </div>
     <div class="row">
