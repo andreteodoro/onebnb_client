@@ -3,19 +3,19 @@
 	<div class="form-group">
   	<div class="col-md-4">
     	<div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
-      	<input type="text" class="form-control" name="inputBeginDate" [value]="begindate" />
+      	<input type="text" class="form-control" name="inputBeginDate" [value]="beginDate" />
       	<span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
       	<div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
-        	<datepicker name="test" [showWeeks]="false" [(ngModel)]="begindate" (ngModelChange)="filter('beginDate', $event.toLocaleDateString())"></datepicker>
+        	<datepicker name="test" [showWeeks]="false" [(ngModel)]="beginDate" (ngModelChange)="filter('beginDate', $event.toLocaleDateString())"></datepicker>
       	</div>
     	</div>
   	</div>
   	<div class="col-md-4">
     	<div class="input-group" dropdown dropdown-append-to-body [autoClose]="'outsideClick'">
-      	<input type="text" class="form-control" name="inputBeginDate" [value]="enddate" />
+      	<input type="text" class="form-control" name="inputEndDate" [value]="endDate" />
       	<span class="input-group-addon" dropdownToggle><i class="fa fa-calendar"></i></span>
       	<div class="dropdown-menu" role="menu" aria-labelledby="btn-append-to-body">
-        	<datepicker name="test" [showWeeks]="false" [(ngModel)]="enddate" (ngModelChange)="filter('endDate', $event.toLocaleDateString())"></datepicker>
+        	<datepicker name="test" [showWeeks]="false" [(ngModel)]="endDate" (ngModelChange)="filter('endDate', $event.toLocaleDateString())"></datepicker>
       	</div>
     	</div>
   	</div>

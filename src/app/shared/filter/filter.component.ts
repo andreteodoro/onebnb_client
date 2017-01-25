@@ -8,24 +8,25 @@ import { Http, URLSearchParams } from '@angular/http';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-  public begindate: Date = new Date();
-  public enddate: Date = new Date();
+  public beginDate: Date = new Date();
+  public endDate: Date = new Date();
   public minPrice: number = 0;
   public maxPrice: number = 1000;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  filter(type, value){
-	this.route.queryParams.subscribe(params => {
-  	let parameters = new URLSearchParams();
-  	for(var f in params) {
-    	if(f != type)
-      	parameters.set(f, params[f])
-  	};
-  	this.router.navigateByUrl('results?' + type + "=" + value + "&" + parameters.toString());
-	});
+  filter(type, value) {
+    this.route.queryParams.subscribe(params => {
+      let parameters = new URLSearchParams();
+      for (var f in params) {
+        if (f != type) {
+          parameters.set(f, params[f])
+        }
+      };
+      this.router.navigateByUrl('results?' + type + "=" + value + "&" + parameters.toString());
+    });
   }
 }
