@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { DropdownModule, AlertModule, ButtonsModule, DatepickerModule, CollapseModule, ModalModule, PaginationModule} from "ng2-bootstrap/ng2-bootstrap";
+import { AlertModule, ButtonsModule, CarouselModule, CollapseModule, DatepickerModule, DropdownModule, ModalModule, PaginationModule} from "ng2-bootstrap/ng2-bootstrap";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
@@ -24,6 +24,8 @@ import { PropertyBoxComponent } from './shared/property-box/property-box.compone
 import { MapComponent } from './shared/map/map.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { PropertyDetailsComponent } from './property/property-details/property-details.component';
+import { ReservationBoxComponent } from './shared/reservation-box/reservation-box.component';
+import { LightboxComponent } from './shared/lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { PropertyDetailsComponent } from './property/property-details/property-d
     PaginationComponent,
     PropertyBoxComponent,
     MapComponent,
-    PropertyDetailsComponent
+    PropertyDetailsComponent,
+    ReservationBoxComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,8 @@ import { PropertyDetailsComponent } from './property/property-details/property-d
     CollapseModule,
     DatepickerModule.forRoot(),
     PaginationModule.forRoot(),
+    CarouselModule.forRoot(),
+    ModalModule.forRoot(),
     AgmCoreModule.forRoot({
      apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME'
    })
