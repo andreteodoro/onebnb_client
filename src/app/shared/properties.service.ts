@@ -15,36 +15,47 @@ export class PropertiesService {
 
   constructor(private http: Http) { }
 
-  searchProperties(params){
+  searchProperties(params) {
     let parameters = new URLSearchParams();
-    for(var f in params) { parameters.set(f, params[f]) }
+    for (var f in params) { parameters.set(f, params[f]) }
 
-    return this.http.get(environment.api_base_url + 'search.json', {search: parameters})
+    return this.http.get(environment.api_base_url + 'search.json', { search: parameters })
       .map(res => res.json());
   }
 
-  getProperties(){
+  getProperties() {
     return this.http.get(environment.api_base_url + 'properties.json')
       .map(res => res.json());
   }
 
-  getProperty(id){
+  getProperty(id) {
     return this.http.get(environment.api_base_url + 'properties.json/' + id)
       .map(res => res.json());
   }
 
-  addProperty(property){
-    return this.http.post(environment.api_base_url + 'properties.json', {'property': property})
+  addProperty(property) {
+    return this.http.post(environment.api_base_url + 'properties.json', { 'property': property })
       .map(res => res.json());
   }
 
-  updateProperty(property){
-    return this.http.put(environment.api_base_url + 'properties.json/' + property.id, {'property': property})
+  updateProperty(property) {
+    return this.http.put(environment.api_base_url + 'properties.json/' + property.id, { 'property': property })
       .map(res => res.json());
   }
 
-  deleteProperty(id){
+  deleteProperty(id) {
     return this.http.delete(environment.api_base_url + 'properties.json/' + id)
       .map(res => res.json());
   }
+
+  addToWishlist(property_id) {
+    return this.http.post(environment.api_base_url + 'properties/' + property_id + '/wishlist', { 'id': property_id })
+      .map(res => res.json());
+  }
+
+  removeFromWishlist(property_id) {
+    return this.http.delete(environment.api_base_url + 'properties/' + property_id + 'wishlist')
+      .map(res => res.json());
+  }
+
 }
