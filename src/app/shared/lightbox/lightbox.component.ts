@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lightbox',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lightbox.component.scss']
 })
 export class LightboxComponent implements OnInit {
+
+  @Input() photos: any;
 
   constructor() { }
 
