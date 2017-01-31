@@ -23,6 +23,7 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { PropertyBoxComponent } from './shared/property-box/property-box.component';
 import { MapComponent } from './shared/map/map.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { PropertyDetailsComponent } from './property/property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     FilterComponent,
     PaginationComponent,
     PropertyBoxComponent,
-    MapComponent
+    MapComponent,
+    PropertyDetailsComponent
   ],
   imports: [
     BrowserModule,

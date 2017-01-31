@@ -16,7 +16,8 @@ export class MapComponent implements OnInit {
     label: string,
     icon: string,
     photo: string,
-    price: number
+    price: number,
+    id: any
   }>;
 
   constructor() { }

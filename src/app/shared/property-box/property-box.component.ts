@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { PropertiesService } from '../../shared/properties.service';
 
-
 @Component({
   selector: 'app-property-box',
   templateUrl: './property-box.component.html',
@@ -15,6 +14,7 @@ export class PropertyBoxComponent implements OnInit {
   @Input() price: string;
   @Input() stars: string;
   @Input() whish: string;
+  @Input() property_id: string;
 
   constructor(private _propertiesService: PropertiesService) { }
 

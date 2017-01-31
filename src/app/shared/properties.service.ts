@@ -29,7 +29,7 @@ export class PropertiesService {
   }
 
   getProperty(id) {
-    return this.http.get(environment.api_base_url + 'properties.json/' + id)
+    return this.http.get(environment.api_base_url + 'properties/' + id + '.json')
       .map(res => res.json());
   }
 
@@ -49,12 +49,12 @@ export class PropertiesService {
   }
 
   addToWishlist(property_id) {
-    return this.http.post(environment.api_base_url + 'properties/' + property_id + '/wishlist', { 'id': property_id })
+    return this.http.post(environment.api_base_url + 'properties/' + property_id + '/wishlist.json', { 'id': property_id })
       .map(res => res.json());
   }
 
   removeFromWishlist(property_id) {
-    return this.http.delete(environment.api_base_url + 'properties/' + property_id + 'wishlist')
+    return this.http.delete(environment.api_base_url + 'properties/' + property_id + 'wishlist.json')
       .map(res => res.json());
   }
 

@@ -19,7 +19,8 @@ export class ResultsComponent implements OnInit {
     label: string,
     icon: string,
     photo: string,
-    price: number
+    price: number,
+    id: any
   }> = [];
   private lat: number = -13.4963582;
   private lng: number = -69.8079044;
@@ -45,6 +46,7 @@ export class ResultsComponent implements OnInit {
     let i = 0;
     for (let p of this.properties) {
       this.mapPins.push({
+        id: p['property']['id'],
         lat: +p['property']['address']['latitude'],
         lng: +p['property']['address']['longitude'],
         draggable: false,

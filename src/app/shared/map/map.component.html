@@ -1,9 +1,16 @@
-<sebm-google-map class="sebm-google-map-container" [latitude]="lat" [longitude]="lng">
+<sebm-google-map class="sebm-google-map-container"
+                [latitude]="lat"
+                [longitude]="lng">
 
-  <sebm-google-map-marker *ngFor="let m of mapPins; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [label]="m.price" [iconUrl]="m.icon">
+  <sebm-google-map-marker *ngFor="let m of mapPins; let i = index"
+                          (markerClick)="clickedMarker(m.label, i)"
+                          [latitude]="m.lat"
+                          [longitude]="m.lng"
+                          [label]="m.price"
+                          [iconUrl]="m.icon">
 
     <sebm-google-map-info-window>
-      <a href="/property/id" target="_blank">
+      <a href="" target="_blank" [routerLink]="['/property', m.id]">
         <div>
           <div>
             <img src="{{ m.photo }}" class="map_pin">
