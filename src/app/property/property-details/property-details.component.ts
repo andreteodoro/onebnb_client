@@ -37,7 +37,7 @@ export class PropertyDetailsComponent implements OnInit {
             this.lat = +data.property.address.latitude;
             this.lng = +data.property.address.longitude;
           },
-          err => {this.router.navigateByUrl('/');}
+          err => {this.router.navigateByUrl('404');}
         );
     });
   }
