@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AlertModule, ButtonsModule, CarouselModule, CollapseModule, DatepickerModule, DropdownModule, ModalModule, PaginationModule} from "ng2-bootstrap/ng2-bootstrap";
+import { AlertModule, ButtonsModule, CarouselModule, CollapseModule, DatepickerModule, DropdownModule, ModalModule, PaginationModule, TypeaheadModule} from "ng2-bootstrap/ng2-bootstrap";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
@@ -30,6 +30,7 @@ import { CommentBoxComponent } from './shared/comment-box/comment-box.component'
 import { UserDetailBoxComponent } from './shared/user-detail-box/user-detail-box.component';
 import { SendMessageComponent } from './shared/send-message/send-message.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 @NgModule({
   declarations: [
@@ -68,9 +69,9 @@ import { NotfoundComponent } from './shared/notfound/notfound.component';
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    AgmCoreModule.forRoot({
-     apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME'
-   })
+    Ng2AutoCompleteModule,
+    TypeaheadModule,
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
   providers: [PropertiesService, Angular2TokenService],
   bootstrap: [AppComponent]
