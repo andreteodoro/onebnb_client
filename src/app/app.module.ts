@@ -31,6 +31,7 @@ import { UserDetailBoxComponent } from './shared/user-detail-box/user-detail-box
 import { SendMessageComponent } from './shared/send-message/send-message.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+import { UsersService } from './shared/users.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
     TypeaheadModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
-  providers: [PropertiesService, Angular2TokenService],
+  providers: [PropertiesService, UsersService, Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

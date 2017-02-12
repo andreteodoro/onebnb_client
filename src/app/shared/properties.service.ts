@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
+import { Angular2TokenService, A2tUiModule } from 'angular2-token';
+
 import { Observable } from 'rxjs/Rx';
 import { environment } from '../../environments/environment';
+import { Http, URLSearchParams } from '@angular/http';
 
 @Injectable()
 export class PropertiesService {
@@ -13,7 +14,7 @@ export class PropertiesService {
   private url: string = "http://localhost:3000/api/v1/properties.json";
   public resetPassword: boolean = false;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private _tokenService: Angular2TokenService) { }
 
   autocomplete() {
     return this.http.get(environment.api_base_url + 'autocomplete.json')
@@ -54,12 +55,12 @@ export class PropertiesService {
   }
 
   addToWishlist(property_id) {
-    return this.http.post(environment.api_base_url + 'properties/' + property_id + '/wishlist.json', { 'id': property_id })
+    return this._tokenService.post('properties/' + property_id + '/wishlist', { })
       .map(res => res.json());
   }
 
   removeFromWishlist(property_id) {
-    return this.http.delete(environment.api_base_url + 'properties/' + property_id + 'wishlist.json')
+    return this._tokenService.delete('properties/' + property_id + '/wishlist')
       .map(res => res.json());
   }
 

@@ -9,7 +9,8 @@
                           property_id="{{ p.property.id }}"
                           name="{{ p.property.name }}"
                           price="{{ p.property.price }}"
-                          photo="{{ p.property.photos[0] }}">
+                          photo="{{ p.property.photos[0] }}"
+                          [wishlisted] = "wishlisted(p.property.id)">
         </app-property-box>
       </div>
     </div>
