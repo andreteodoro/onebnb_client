@@ -32,6 +32,7 @@ import { SendMessageComponent } from './shared/send-message/send-message.compone
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { UsersService } from './shared/users.service';
+import { ReservationService } from './shared/reservation.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,7 @@ import { UsersService } from './shared/users.service';
     TypeaheadModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
-  providers: [PropertiesService, UsersService, Angular2TokenService],
+  providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
