@@ -29,6 +29,11 @@ export class PropertiesService {
       .map(res => res.json());
   }
 
+  getFeatured() {
+    return this.http.get(environment.api_base_url + 'featured.json')
+      .map(res => res.json());
+  }
+
   getProperties() {
     return this.http.get(environment.api_base_url + 'properties.json')
       .map(res => res.json());
@@ -55,7 +60,7 @@ export class PropertiesService {
   }
 
   addToWishlist(property_id) {
-    return this._tokenService.post('properties/' + property_id + '/wishlist', { })
+    return this._tokenService.post('properties/' + property_id + '/wishlist', {})
       .map(res => res.json());
   }
 
