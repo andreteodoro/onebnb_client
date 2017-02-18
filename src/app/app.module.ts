@@ -33,6 +33,7 @@ import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { UsersService } from './shared/users.service';
 import { ReservationService } from './shared/reservation.service';
+import { TalksService } from './shared/talks.service';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,7 @@ import { ReservationService } from './shared/reservation.service';
     TypeaheadModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
-  providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService],
+  providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService, TalksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
