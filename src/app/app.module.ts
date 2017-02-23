@@ -34,6 +34,7 @@ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import { UsersService } from './shared/users.service';
 import { ReservationService } from './shared/reservation.service';
 import { TalksService } from './shared/talks.service';
+import { MenuComponent } from './shared/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { TalksService } from './shared/talks.service';
     CommentBoxComponent,
     UserDetailBoxComponent,
     SendMessageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
