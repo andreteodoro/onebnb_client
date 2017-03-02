@@ -17,7 +17,6 @@ export class TalksChatComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      // Chama o método para baixar as mensagens assim que carrega a página
       this.TalksService.getMessages(params['id'])
         .subscribe(data => {
                               this.talk = data;
@@ -26,7 +25,7 @@ export class TalksChatComponent implements OnInit {
                    err  => {this.router.navigateByUrl('/')}
       );
 
-      // Se inscreve para receber a mensagem de 4 em 4 segundos
+      // Subscribe to receive messages each 4 seconds
       this.TalksService.poolingMessages(params['id'])
         .subscribe(data => {this.talk = data},
                    err => {this.router.navigateByUrl('/')}

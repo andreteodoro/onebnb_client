@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Http, URLSearchParams } from '@angular/http';
 import { PropertiesService } from '../properties.service'
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
 @Component({
   selector: 'app-search',
@@ -13,7 +14,7 @@ export class SearchComponent implements OnInit {
   private event: KeyboardEvent;
   private query: string = "";
   private arrayAutocomplete: string[] = [];
-  private searchModel = "";
+  private searchModel:string;
 
   constructor(private PropertiesService: PropertiesService, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,9 +26,8 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  private onEvent(event: KeyboardEvent): void {
-    if (event.key == "Enter" && this.query != "")
-      this.search();
+  public typeaheadOnSelect(e: TypeaheadMatch): void {
+    this.search();
   }
 
   search() {
@@ -37,7 +37,8 @@ export class SearchComponent implements OnInit {
         if (f != "search")
           parameters.set(f, params[f])
       };
-      this.router.navigateByUrl('results?search=' + this.query + "&" + parameters.toString());
+      this.router.navigateByUrl('results?search=' + this.searchModel + "&" + parameters.toString());
+      console.log(this.searchModel);
     });
   }
 }

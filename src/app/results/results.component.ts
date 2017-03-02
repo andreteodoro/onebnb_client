@@ -34,7 +34,6 @@ ngOnInit() {
   this.route
     .queryParams
     .subscribe(params => {
-      // Método que chama nosso Service
       this.PropertiesService.searchProperties(params)
         .subscribe(data => {
           this.properties = data;
