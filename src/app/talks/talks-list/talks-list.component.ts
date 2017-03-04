@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TalksService } from '../../shared/talks.service';
-import {ActivatedRoute, Params} from '@angular/router';
-
+import { ActivatedRoute, Params } from '@angular/router';
+import { TruncateModule } from 'ng2-truncate';
 
 @Component({
   selector: 'app-talks-list',

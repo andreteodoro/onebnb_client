@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          {{ t.message.body }}
+          {{ t.message.body | truncate : 300 }}
         </div>
         <div class="col-md-2 col-offset-md-1 text-center" *ngIf="t.reservation != null || t.reservation == ''">
           <div class="row">

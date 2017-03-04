@@ -37,6 +37,7 @@ import { TalksService } from './shared/talks.service';
 import { MenuComponent } from './shared/menu/menu.component';
 import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
+import { TruncateModule } from 'ng2-truncate';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
     Ng2AutoCompleteModule,
+    TruncateModule,
     TypeaheadModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
