@@ -13,6 +13,7 @@ import { PropertyDetailsComponent } from './property/property-details/property-d
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
+import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
 
 
 const appRoutes: Routes = [
@@ -26,8 +27,8 @@ const appRoutes: Routes = [
   { path: 'property/:id', component: PropertyDetailsComponent },
   { path: 'talks', component: TalksListComponent },
   { path: 'talks/chat/:id', component: TalksChatComponent },
+  { path: 'trips', component: PropertyTripsComponent },
   { path: '404', component: NotfoundComponent }
-
 ];
 
 // Export the constant routing to be imported at the file app.module.ts

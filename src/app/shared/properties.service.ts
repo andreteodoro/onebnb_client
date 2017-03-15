@@ -69,4 +69,8 @@ export class PropertiesService {
       .map(res => res.json());
   }
 
+  myTrips(){
+    return this._tokenService.get(environment.api_base_url + 'trips')
+      .map(res => res.json());
+  }
 }
