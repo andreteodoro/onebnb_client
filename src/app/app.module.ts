@@ -39,6 +39,7 @@ import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
 import { TruncateModule } from 'ng2-truncate';
 import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
+import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { PropertyTripsComponent } from './property/property-trips/property-trips
     MenuComponent,
     TalksListComponent,
     TalksChatComponent,
-    PropertyTripsComponent
+    PropertyTripsComponent,
+    ReservationDetailsComponent
   ],
   imports: [
     BrowserModule,

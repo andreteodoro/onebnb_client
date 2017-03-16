@@ -14,6 +14,7 @@ import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
 import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
+import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
 
 
 const appRoutes: Routes = [
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'talks', component: TalksListComponent },
   { path: 'talks/chat/:id', component: TalksChatComponent },
   { path: 'trips', component: PropertyTripsComponent },
+  { path: 'property/:id/reservation', component: ReservationDetailsComponent },
   { path: '404', component: NotfoundComponent }
 ];
 
