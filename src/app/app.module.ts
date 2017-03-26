@@ -40,6 +40,7 @@ import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
 import { TruncateModule } from 'ng2-truncate';
 import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
 import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
+import {SimpleNotificationsModule} from 'angular2-notifications';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ReservationDetailsComponent } from './reservation/reservation-details/r
     Ng2AutoCompleteModule,
     TruncateModule,
     TypeaheadModule,
+    SimpleNotificationsModule.forRoot(),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
   providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService, TalksService],
