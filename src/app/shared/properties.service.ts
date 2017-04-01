@@ -45,14 +45,78 @@ export class PropertiesService {
   }
 
   addProperty(property) {
-    return this.http.post(environment.api_base_url + 'properties.json', { 'property': property })
-      .map(res => res.json());
-  }
+    var address_params = {
+      country: property.country,
+      state: property.state,
+      city: property.city,
+      neighborhood: property.neighborhood,
+      street: property.street,
+      number: property.number,
+      zipcode: property.zipcode
+    }
 
-  updateProperty(property) {
-    return this.http.put(environment.api_base_url + 'properties.json/' + property.id, { 'property': property })
-      .map(res => res.json());
-  }
+    var facility_params = {
+      wifi: property.wifi,
+      washing_machine: property.washing_machine,
+      clothes_iron: property.clothes_iron,
+      towels: property.towels,
+      air_conditioning: property.air_conditioning,
+      heater: property.heater,
+      refrigerator: property.refrigerator
+    }
+    return this._tokenService.post('properties/', {
+      'api_v1_property': {
+        name: property.name,
+        price: property.price,
+        description: property.description,
+        guest_max: property.guest_max,
+        beds: property.beds,
+        bedroom: property.bedroom,
+        bathroom: property.bathroom,
+        accommodation_type: property.accommodation_type,
+        "address_attributes": address_params,
+        "facility_attributes": facility_params
+      }
+    })
+      .map(res => res.json());
+  }
+
+  updateProperty(property, id) {
+    var address_params = {
+      country: property.country,
+      state: property.state,
+      city: property.city,
+      neighborhood: property.neighborhood,
+      street: property.street,
+      number: property.number,
+      zipcode: property.zipcode
+    }
+
+    var facility_params = {
+      wifi: property.wifi,
+      washing_machine: property.washing_machine,
+      clothes_iron: property.clothes_iron,
+      towels: property.towels,
+      air_conditioning: property.air_conditioning,
+      heater: property.heater,
+      refrigerator: property.refrigerator
+    }
+    return this._tokenService.put('properties/' + id, {
+      'api_v1_property': {
+        name: property.name,
+        price: property.price,
+        description: property.description,
+        guest_max: property.guest_max,
+        beds: property.beds,
+        bedroom: property.bedroom,
+        bathroom: property.bathroom,
+        accommodation_type: property.accommodation_type,
+        "address_attributes": address_params,
+        "facility_attributes": facility_params
+      }
+    })
+      .map(res => res.json());
+  }
 
   deleteProperty(id) {
     return this.http.delete(environment.api_base_url + 'properties.json/' + id)

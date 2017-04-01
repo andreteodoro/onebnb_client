@@ -45,6 +45,7 @@ import { PropertyTripsComponent } from './property/property-trips/property-trips
 import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PropertyFormComponent } from './property/property-form/property-form.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TalksListComponent,
     TalksChatComponent,
     PropertyTripsComponent,
-    ReservationDetailsComponent
+    ReservationDetailsComponent,
+    PropertyFormComponent
   ],
   imports: [
     BrowserModule,
