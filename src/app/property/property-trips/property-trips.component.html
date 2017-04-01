@@ -16,7 +16,7 @@
               [wishlisted] = "null"
             ></app-property-box>
 
-            <p class="pull-right">10/10/10</p>
+            <p class="pull-right">{{ p.reservation.checkin_date | date }}</p>
 
             <div class="row send_and_cancel">
               <div class="col-md-5 col-md-offset-1">
@@ -25,10 +25,10 @@
                 </button>
               </div>
               <div class="col-md-5 col-md-offset-1">
-                <button class="btn btn-default">
-                  CANCELAR
-                </button>
-              </div>
+                <a (click)="cancelActive(p)" href="" class="btn btn-default">
+                  CANCELAR
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
               [wishlisted] = "null"
             ></app-property-box>
 
-            <p class="pull-right">10/10/10</p>
+            <p class="pull-right">{{ p.reservation.checkin_date | date }}</p>
 
             <div class="row send_and_cancel">
               <div class="col-md-5 col-md-offset-1">
@@ -65,10 +65,10 @@
                 </button>
               </div>
               <div class="col-md-5 col-md-offset-1">
-                <button class="btn btn-default">
-                  CANCELAR
-                </button>
-              </div>
+                <a (click)="cancelPending(p)" href="" class="btn btn-default">
+                  CANCELAR
+                </a>
+              </div>
             </div>
           </div>
         </div>

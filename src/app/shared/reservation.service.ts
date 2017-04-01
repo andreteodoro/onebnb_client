@@ -13,8 +13,12 @@ export class ReservationService {
 
   constructor(private http: Http, private _tokenService: Angular2TokenService) { }
 
-  addEvaluation(id, comment, rating){
-    return this._tokenService.post('reservations/' + id + '/evaluation', {"evaluation": {"comment": comment, "rating": rating}})
+  addEvaluation(id, comment, rating) {
+    return this._tokenService.post('reservations/' + id + '/evaluation', { "evaluation": { "comment": comment, "rating": rating } })
       .map(res => res.json());
+  }
+
+  cancel(id) {
+    return this._tokenService.put('reservations/' + id + '/cancel', {}).map(res => res.json());
   }
 }
