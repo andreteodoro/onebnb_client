@@ -7,7 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { Property } from './shared/property';
+
 import { PropertiesService } from './shared/properties.service';
+import { UsersService } from './shared/users.service';
+import { ReservationService } from './shared/reservation.service';
+import { TalksService } from './shared/talks.service';
+
+
 import { Angular2TokenService, A2tUiModule} from 'angular2-token';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
@@ -31,16 +37,14 @@ import { UserDetailBoxComponent } from './shared/user-detail-box/user-detail-box
 import { SendMessageComponent } from './shared/send-message/send-message.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
-import { UsersService } from './shared/users.service';
-import { ReservationService } from './shared/reservation.service';
-import { TalksService } from './shared/talks.service';
 import { MenuComponent } from './shared/menu/menu.component';
 import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
 import { TruncateModule } from 'ng2-truncate';
 import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
 import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
-import {SimpleNotificationsModule} from 'angular2-notifications';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -88,6 +92,7 @@ import {SimpleNotificationsModule} from 'angular2-notifications';
     TruncateModule,
     TypeaheadModule,
     SimpleNotificationsModule.forRoot(),
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyCgyttVo10YdzIlAgAe63Np3S2jwhzq1ME' })
   ],
   providers: [PropertiesService, UsersService, ReservationService, Angular2TokenService, TalksService],

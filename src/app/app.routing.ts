@@ -15,7 +15,7 @@ import { TalksListComponent } from './talks/talks-list/talks-list.component';
 import { TalksChatComponent } from './talks/talks-chat/talks-chat.component';
 import { PropertyTripsComponent } from './property/property-trips/property-trips.component';
 import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
-
+import { UserShowComponent } from './users/user-show/user-show.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -24,12 +24,13 @@ const appRoutes: Routes = [
   { path: 'user/resetPassword', component: ResetPasswordComponent },
   { path: 'user/updatePassword', component: UpdatePasswordComponent },
   { path: 'user/edit', component: UserEditComponent, canActivate: [Angular2TokenService] },
+  { path: 'user/show', component: UserShowComponent, canActivate: [Angular2TokenService] },
   { path: 'results', component: ResultsComponent },
   { path: 'property/:id', component: PropertyDetailsComponent },
-  { path: 'talks', component: TalksListComponent },
-  { path: 'talks/chat/:id', component: TalksChatComponent },
-  { path: 'trips', component: PropertyTripsComponent },
   { path: 'property/:id/reservation', component: ReservationDetailsComponent },
+  { path: 'talks', component: TalksListComponent, canActivate: [Angular2TokenService] },
+  { path: 'talks/chat/:id', component: TalksChatComponent, canActivate: [Angular2TokenService] },
+  { path: 'trips', component: PropertyTripsComponent, canActivate: [Angular2TokenService] },
   { path: '404', component: NotfoundComponent }
 ];
 
