@@ -17,6 +17,7 @@ import { PropertyTripsComponent } from './property/property-trips/property-trips
 import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
 import { UserShowComponent } from './users/user-show/user-show.component';
 import { PropertyFormComponent } from './property/property-form/property-form.component';
+import { PropertyListComponent } from './property/property-list/property-list.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'user/show', component: UserShowComponent, canActivate: [Angular2TokenService] },
   { path: 'results', component: ResultsComponent },
   { path: 'property/new', component: PropertyFormComponent, canActivate: [Angular2TokenService]},
+  { path: 'property/list', component: PropertyListComponent, canActivate: [Angular2TokenService] },
   { path: 'property/:id', component: PropertyDetailsComponent },
   { path: 'property/:id/reservation', component: ReservationDetailsComponent },
   { path: 'property/:id/edit', component: PropertyFormComponent, canActivate: [Angular2TokenService]},

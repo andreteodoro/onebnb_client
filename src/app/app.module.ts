@@ -46,6 +46,7 @@ import { ReservationDetailsComponent } from './reservation/reservation-details/r
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PropertyFormComponent } from './property/property-form/property-form.component';
+import { PropertyListComponent } from './property/property-list/property-list.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { PropertyFormComponent } from './property/property-form/property-form.co
     TalksChatComponent,
     PropertyTripsComponent,
     ReservationDetailsComponent,
-    PropertyFormComponent
+    PropertyFormComponent,
+    PropertyListComponent
   ],
   imports: [
     BrowserModule,

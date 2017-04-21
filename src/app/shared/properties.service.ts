@@ -138,6 +138,11 @@ export class PropertiesService {
       .map(res => res.json());
   }
 
+  myProperties(){
+    return this._tokenService.get('my_properties')
+      .map(res => res.json());
+  }
+
   is_available(checkin_date, checkout_date, id) {
     let params = new URLSearchParams();
     params.set('checkin_date', checkin_date);
