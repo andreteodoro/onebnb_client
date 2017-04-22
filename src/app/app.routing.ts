@@ -18,6 +18,8 @@ import { ReservationDetailsComponent } from './reservation/reservation-details/r
 import { UserShowComponent } from './users/user-show/user-show.component';
 import { PropertyFormComponent } from './property/property-form/property-form.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
+import { PropertyReservationsComponent } from './property/property-reservations/property-reservations.component';
+
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'property/list', component: PropertyListComponent, canActivate: [Angular2TokenService] },
   { path: 'property/:id', component: PropertyDetailsComponent },
   { path: 'property/:id/reservation', component: ReservationDetailsComponent },
+  { path: 'property/:id/reservations', component: PropertyReservationsComponent, canActivate: [Angular2TokenService] },
   { path: 'property/:id/edit', component: PropertyFormComponent, canActivate: [Angular2TokenService]},
   { path: 'talks', component: TalksListComponent, canActivate: [Angular2TokenService] },
   { path: 'talks/chat/:id', component: TalksChatComponent, canActivate: [Angular2TokenService] },

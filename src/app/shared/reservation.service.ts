@@ -21,4 +21,20 @@ export class ReservationService {
   cancel(id) {
     return this._tokenService.put('reservations/' + id + '/cancel', {}).map(res => res.json());
   }
+
+  accept(id) {
+    return this._tokenService.put('reservations/' + id + '/accept', {}).map(res => res.json());
+  }
+
+  refuse(id) {
+    return this._tokenService.put('reservations/' + id + '/refuse', {}).map(res => res.json());
+  }
+
+  getByProperty(id) {
+    let params = new URLSearchParams();
+    params.set('id', id);
+
+    return this._tokenService.get('get_by_property', { search: params })
+      .map(res => res.json());
+  }
 }
