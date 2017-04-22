@@ -118,10 +118,10 @@ export class PropertiesService {
       .map(res => res.json());
   }
 
-  deleteProperty(id) {
-    return this.http.delete(environment.api_base_url + 'properties.json/' + id)
-      .map(res => res.json());
-  }
+  deleteProperty(id){
+  return this._tokenService.delete('properties/' + id + '.json')
+    .map(res => res.json());
+}
 
   addToWishlist(property_id) {
     return this._tokenService.post('properties/' + property_id + '/wishlist', {})

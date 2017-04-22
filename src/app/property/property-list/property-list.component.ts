@@ -40,7 +40,31 @@ export class PropertyListComponent implements OnInit {
       }
       );
   }
-  delete(property) {
-  }
+
+  delete(property) {
+    if (confirm("Você tem certeza que quer apagar esse anúncio?")) {
+      this.PropertiesService.deleteProperty(property.id)
+        .subscribe(data => {
+
+          var index = this.properties.indexOf(property);
+          this.properties.splice(index, 1);
+
+          this.NotificationsService.alert(
+            'Anúncio Deletado',
+            'Sucesso.',
+            {
+              timeOut: 5000,
+              showProgressBar: true,
+              pauseOnHover: false,
+              clickToClose: true,
+              maxLength: 30,
+              lastOnBottom: true
+            }
+          );
+        }
+        );
+    }
+    return false;
+  }
 
 }
